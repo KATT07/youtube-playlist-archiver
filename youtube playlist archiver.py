@@ -51,12 +51,12 @@ def scan_new():
 #Keep this file saved somewhere
 def write_new():
     if big_data!=[]:
-        m=open("big_data.bin",'wb')
-        pickle.dump(big_data,m)
-        m.close()
+        f=open("big_data.bin",'wb')
+        pickle.dump(big_data,f)
         print("Saved items to the file")
     else:
         print("No playlist scanned yet scan a playlist 1st")
+    f.close()
 
 def print_big_data():
     f=open('big_data.bin','rb')
@@ -67,6 +67,7 @@ def print_big_data():
         print(count,". ",i)
     print()
     print("Number of videos detected in big_data =",len(big_data))
+    f.close()
 
 def print_big_data_deleted():
     f=open("big_data.bin","rb")
@@ -77,6 +78,7 @@ def print_big_data_deleted():
         if i[1]=="Private video" or i[1]=="Deleted video" or i[2]=="This video is unavailable.":
             count+=1
             print(count,". ",i)
+    f.close()
 
 def print_big_data_deleted_links():
     f=open("big_data.bin","rb")
@@ -87,6 +89,7 @@ def print_big_data_deleted_links():
         if i[1]=="Private video" or i[1]=="Deleted video" or i[2]=="This video is unavailable.":
             count+=1
             print(count,", ",i[1]," - ","https://youtu.be/"+i[0])
+    f.close()
 
 def search_big_data():
     f=open("big_data.bin","rb")
@@ -118,7 +121,7 @@ def search_big_data():
                 print("Not Found")
     else:
         print("Invalid input")
-
+    f.close()
 
 while True:
     print()
