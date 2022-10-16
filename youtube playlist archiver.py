@@ -44,7 +44,7 @@ def scan_new():
     print("Number of videos detected in playlist =",pl_no)
     count=0
     for i in big_data:
-        if i[1]=="Private video" or i[1]=="Deleted video" or i[2]=="This video is unavailable." :
+        if i[1]=="Private video" or i[1]=="Deleted video":
             count+=1
             print(count,". ","Private/Deleted videos in scan :",i)
 
@@ -85,7 +85,7 @@ def print_big_data_deleted_links():
     big_data=pickle.load(f)
     count=0
     print("Deleted videos links are :")
-    for i in big_data():
+    for i in big_data:
         if i[1]=="Private video" or i[1]=="Deleted video" or i[2]=="This video is unavailable.":
             count+=1
             print(count,", ",i[1]," - ","https://youtu.be/"+i[0])
