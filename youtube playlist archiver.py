@@ -6,7 +6,7 @@ import pickle
 from googleapiclient.discovery import build
 
 #tutorial for how to get youtube data api v3 developer key
-api_key="AIzaSyAkRizzv3LMziSRi3Kv7TttPVC_XbyAU_U"
+api_key=input("Enter your YouTube DATA API V3 API KEY :")
 youtube = build('youtube','v3',developerKey=api_key)
 print()
 
