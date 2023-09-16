@@ -6,7 +6,7 @@ import pickle
 from googleapiclient.discovery import build
 
 #tutorial for how to get youtube data api v3 developer key
-api_key=input("Enter Google Youtube Data API V3 Developer KEY :")
+api_key="AIzaSyAkRizzv3LMziSRi3Kv7TttPVC_XbyAU_U"
 youtube = build('youtube','v3',developerKey=api_key)
 print()
 
@@ -101,26 +101,28 @@ def search_big_data():
     choice=int(input("Enter choice for search :"))
     search=input("Enter search string :")
     print()
+    aa="True"
     if choice==1:
         for i in big_data:
             if search.lower() in i[1].lower():
-                print(i)
-            else:
-                print("Not Found")
+                print(i[1])
+                aa="False"
     elif choice==2:
         for i in big_data:
             if search.lower() in i[2].lower():
                 print(i)
-            else:
-                print("Not Found")
+                aa="False"
     elif choice==3:
         for i in big_data:
             if search==i[0]:
                 print(i)
-            else:
-                print("Not Found")
+                aa="False"
     else:
         print("Invalid input")
+
+    if aa=="True":
+        print("Not Found")
+
     f.close()
 
 while True:
