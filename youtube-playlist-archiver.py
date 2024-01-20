@@ -1,7 +1,6 @@
 #this is a script to show privated/deleted videos in a playlist
 #if needed save it to a file for later viewing of results of the file
 
-import os
 import pickle
 from googleapiclient.discovery import build
 
